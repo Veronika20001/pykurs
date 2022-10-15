@@ -1,4 +1,5 @@
 from random import *
+from math import *
 
 # exercise_1
 '''Написать функцию, которая определяет количество разрядов
@@ -98,3 +99,60 @@ def letters(user_string):
 
 
 letters(input('Введите строку на русском языке: '))
+
+# exercise_6
+'''Функцию которая при заданном целом числе n
+посчитает n + nn + nnn.'''
+
+
+def example(n):
+    n1 = n
+    n2 = int(str(n) * 2)  # nn
+    n3 = int(str(n) * 3)  # nnn
+    print(n1 + n2 + n3)
+
+
+example(int(input('Введите число: ')))
+
+
+# exercise_7
+def func_(x):
+    if -5 <= x <= 5:
+        return pow(x, 2)
+    elif x < -5:
+        return 2 * (abs(x - 1))
+    else:
+        return 2 * x
+
+
+for i in range(-10, 11):
+    print(func_(i))
+
+
+# homework
+def type_(unknown):
+    if type(unknown) == tuple:
+        for i in unknown:
+            print(len(i))
+    elif type(unknown) == list:
+        count = 0
+        count_1 = 0
+        for i in unknown:
+            if type(i) == str:
+                for x in i:
+                    count += 1
+            elif type(i) == int:
+                count_1 += 1
+        print(count, count_1)
+    if type(unknown) == int:
+        odd = 0
+        while unknown > 0:
+            if unknown % 2 != 0:
+                odd += 1
+            unknown = unknown // 10
+        print(odd)
+    if type(unknown) == str:
+        print(len(unknown))
+
+
+type_(input('Введите данные: '))
